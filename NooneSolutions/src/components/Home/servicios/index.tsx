@@ -47,10 +47,10 @@ const Servicios = () => {
               </div>
               <div className="absolute lg::top-40 top-36 lg:left-0 -left-20 w-96 flex items-center gap-6">
                 <div className="text-right">
-                  <h5 className="text-white text-24 mb-3">
+                  <h5 className="text-white mb-3" style={{ fontSize: '1.9rem' }}>
                     Consultoría
                   </h5>
-                  <p className="text-14 text-muted text-opacity-60">
+                  <p className="text-14 text-muted text-opacity-60" style={{ fontSize: '1rem' }}>
                     Contanos cuál es tu idea o qué problema de tu proyecto te interesa resolver.
                     Nosotros te propondremos la mejor solución tecnológica. No es necesario que tengas conocimiento técnico!.
                   </p>
@@ -77,10 +77,10 @@ const Servicios = () => {
                   />
                 </div>
                 <div className="text-left">
-                  <h5 className="text-muted text-nowrap text-24 mb-3">
+                  <h5 className="text-muted text-nowrap mb-3" style={{ fontSize: '1.9rem' }}>
                     Desarrollo de Software
                   </h5>
-                  <p className="text-14 text-muted text-opacity-60">
+                  <p className="text-14 text-muted text-opacity-60" style={{ fontSize: '1rem' }}>
                     Programamos el firmware y software necesario para el funcionamiento de tu dispositivo.
                     Podemos encargarnos también del software de escritorio, mobile o web.
                   </p>
@@ -89,10 +89,10 @@ const Servicios = () => {
 
               <div className="absolute lg:bottom-56 bottom-52 lg:right-0 -left-0 w-96 flex items-center gap-6">
                 <div className="text-right">
-                  <h5 className="text-white text-24 mb-3">
+                  <h5 className="text-white mb-3" style={{ fontSize: '1.9rem', lineHeight: '2rem'  }}>
                     Diseño, prototipado y testing
                   </h5>
-                  <p className="text-14 text-muted text-opacity-60">
+                  <p className="text-14 text-muted text-opacity-60" style={{ fontSize: '1rem' }}>
                     Diseñamos los esquemas electrónicos y mecánicos.
                     Luego, creamos los primeros prototipos y realizamos pruebas para garantizar un funcionamiento óptimo.
                   </p>
@@ -119,10 +119,10 @@ const Servicios = () => {
                   />
                 </div>
                 <div className="text-left">
-                  <h5 className="text-muted text-nowrap text-24 mb-3">
+                  <h5 className="text-muted text-nowrap mb-3" style={{ fontSize: '1.9rem' }}>
                     Producción y ensamblaje
                   </h5>
-                  <p className="text-14 text-muted text-opacity-60">
+                  <p className="text-14 text-muted text-opacity-60" style={{ fontSize: '1rem' }}>
                     Gestionamos la fabricación y ensamblaje de tu dispositivo.
                   </p>
                 </div>
@@ -139,8 +139,8 @@ const Servicios = () => {
                   />
                 </div>
                 <div className="text-left">
-                  <h5 className="text-white text-24 mb-3">Soporte</h5>
-                  <p className="text-14 text-muted text-opacity-60">
+                  <h5 className="text-white mb-3" style={{ fontSize: '1.9rem' }}>Soporte</h5>
+                  <p className="text-14 text-muted text-opacity-60" style={{ fontSize: '1rem' }}>
                     Luego de entregar el producto final, ofrecemos también soporte post-lanzamiento.
                   </p>
                 </div>

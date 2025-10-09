@@ -22,16 +22,16 @@ const Nosotros = () => {
   const nosotros = [
     {
       icon: "/images/icons/icon-nosotros-02.svg",
-      text: "Somos un equipo interdisciplinario de profesionales con años de experiencia en la fabricación de sistemas para las áreas de industria, medicina,  agricultura y servicios. Curiosidad y pasión nos motiva día a día a mejorar.",
+      text: "Somos un equipo interdisciplinario de profesionales con experiencia en el diseño y desarrollo de soluciones tecnológicas aplicadas a la industria, medicina, agricultura y servicios.",
     },
     {
       icon: "/images/icons/icon-nosotros-01.svg",
-      text: "Nuestra experiencia nos convierte en el socio ideal tanto para convertir tu idea en un prototipo, así como también convertir un prototipo a un producto de fabricación masiva.",
+      text: "Nuestra experiencia nos convierte en el socio ideal, tanto para convertir tu idea en un prototipo, como así también, para convertir el prototipo en un producto de fabricación masiva.",
     },
   ];
 
   return (
-    <section className="pt-12 sm:pt-28 md:pt-48 relative" id="nosotros">
+    <section className="pt-12 sm:pt-28 md:pt-48 relative" id="nosotros" style={{ paddingTop: '0rem' }}>
       <div className="container mx-auto lg:max-w-screen-xl px-4 sm:px-6 relative">
         <div className="text-center"></div>
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-12 items-center gap-x-10 gap-y-14 md:gap-x-20 md:gap-y-20">
