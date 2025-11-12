@@ -58,7 +58,7 @@ const Footer: FC = () => {
               ))}
             </ul>
           </div>
-          <div className="lg:col-span-2 md:col-span-3 col-span-6">
+          {/*<div className="lg:col-span-2 md:col-span-3 col-span-6">
             <h4 className="text-white mb-4 font-medium text-24">Information</h4>
             <ul>
               {footerlabels.map((item, index) => (
@@ -72,7 +72,7 @@ const Footer: FC = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div>*/}
         </div>
       </div>
     </footer>

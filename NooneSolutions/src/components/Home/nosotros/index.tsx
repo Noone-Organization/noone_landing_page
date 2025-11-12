@@ -14,9 +14,9 @@ const Nosotros = () => {
   };
 
   const bottomAnimation = {
-    initial: { y: "100%", opacity: 0 },
-    animate: inView ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 },
-    transition: { duration: 0.6, delay: 0.4 },
+    initial: { y: "-100%", opacity: 0 },
+    animate: inView ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 },
+    transition: { duration: 0.6, delay: 0.2 },
   };
 
   const nosotros = [

@@ -50,23 +50,23 @@ export const clientes: {
 export const proyectosData: { image: string; title: string }[] = [
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "ESPHome firmware para conectar con InfluxDB",
+    title: "Firmware para conectar con InfluxDB utilizando ESPHome",
   },
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "Desarrollo web con ESP32 usando mDNS",
+    title: "Software para actualizar controlador MIDI utilizando Windows y Macos",
   },
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "Custom ESPHome Component Development for CO2 Sensor",
+    title: "Firmware para sensor CO2 utilizando InfluxDB",
   },
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "ESP32 battery data website with mDNS",
+    title: "Firmware para ESP32 para visualizar web de datos",
   },
   
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "BladeRunner",
+    title: "Software utilizando C++/Python para simulación de turbinas",
   },
 ];
