@@ -47,26 +47,25 @@ export const clientes: {
   },
 ];
 
-export const proyectosData: { image: string; title: string }[] = [
+export const getProyectosData = (t: (key: string) => string) => [
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "Firmware para conectar con InfluxDB utilizando ESPHome",
+    title: t("proyectos_01"),
   },
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "Software para actualizar controlador MIDI utilizando Windows y Macos",
+    title: t("proyectos_02"),
   },
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "Firmware para sensor CO2 utilizando InfluxDB",
+    title: t("proyectos_03"),
   },
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "Firmware para ESP32 para visualizar web de datos",
+    title: t("proyectos_04"),
   },
-  
   {
     image: "/images/proyectos/icon-proyectos.svg",
-    title: "Software utilizando C++/Python para simulación de turbinas",
+    title: t("proyectos_05"),
   },
 ];

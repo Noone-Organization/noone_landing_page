@@ -1,8 +1,12 @@
 "use client"
 import Link from "next/link";
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Contacto = () => {
+
+  const { t } = useLanguage();
+
   const [formData, setFormData] = useState({
     nombreCompleto: "",
     email: "",
@@ -23,12 +27,14 @@ const Contacto = () => {
         <div className="bg-section bg-opacity-10 px-6 sm:px-12 md:px-16 py-10 sm:py-14 rounded-3xl border-2 border-opacity-20 border-section grid grid-cols-12 gap-6 sm:gap-10 relative overflow-hidden">
 
           <div className="col-span-12 mb-6 text-center sm:text-left">
-            <p className="text-muted text-18 sm:text-28 mb-2">Contacto</p>
+            <p className="text-muted text-18 sm:text-28 mb-2">
+              {t("contacto")}
+              </p>
             <h2 className="text-white text-30 sm:text-40 font-medium mb-3">
-              Dejanos tu mensaje
+              {t("contacto_titulo")}
             </h2>
             <p className="text-muted text-opacity-60 text-16 sm:text-18">
-              Estamos cerca, estés donde estés.
+              {t("contacto_subtitulo")}
             </p>
           </div>
 
@@ -40,7 +46,7 @@ const Contacto = () => {
               <div className="mb-4">
                 <input
                   type="text"
-                  placeholder="Nombre"
+                  placeholder={t("contacto_nombre")}
                   value={formData.nombreCompleto}
                   onChange={(e) =>
                     setFormData({ ...formData, nombreCompleto: e.target.value })
@@ -53,7 +59,7 @@ const Contacto = () => {
               <div className="mb-4">
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder={t("contacto_email")}
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -65,7 +71,7 @@ const Contacto = () => {
 
               <div className="mb-4">
                 <textarea
-                  placeholder="Mensaje"
+                  placeholder={t("contacto_mensaje")}
                   value={formData.mensaje}
                   onChange={(e) =>
                     setFormData({ ...formData, mensaje: e.target.value })
@@ -79,7 +85,7 @@ const Contacto = () => {
                 type="submit"
                 className="bg-primary w-full py-3 rounded-lg text-18 font-medium border border-primary hover:text-primary hover:bg-transparent transition"
               >
-                Enviar
+                {t("contacto_boton")}
               </button>
             </form>
           </div>

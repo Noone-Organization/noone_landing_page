@@ -3,7 +3,12 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { getImagePrefix } from "@/utils/utils";
+import { useLanguage } from "@/context/LanguageContext";
+
 const Nosotros = () => {
+
+  const { t } = useLanguage();
+
   const ref = useRef(null);
   const inView = useInView(ref);
 
@@ -22,11 +27,11 @@ const Nosotros = () => {
   const nosotros = [
     {
       icon: "/images/icons/icon-nosotros-02.svg",
-      text: "Somos un equipo interdisciplinario de profesionales con experiencia en el diseño y desarrollo de soluciones tecnológicas aplicadas a la industria, medicina, agricultura y servicios.",
+      text: t("nosotros_texto_izq_01"),
     },
     {
       icon: "/images/icons/icon-nosotros-01.svg",
-      text: "Nuestra experiencia nos convierte en el socio ideal, tanto para convertir tu idea en un prototipo, como así también, para convertir el prototipo en un producto de fabricación masiva.",
+      text: t("nosotros_texto_izq_02"),
     },
   ];
 
@@ -39,7 +44,7 @@ const Nosotros = () => {
             className="col-span-1 md:col-span-6 space-y-8"
           >
             <h2 className="text-30 sm:text-40 text-white font-medium">
-              Nosotros
+              {t("nosotros_titulo")}
             </h2>
             <div className="grid gap-7">
               {nosotros.map((item, index) => (
@@ -72,24 +77,24 @@ const Nosotros = () => {
             <div className="relative z-10 mt-10 md:m-16 flex md:justify-end">
               <div className="bg-darkmode bg-opacity-90 px-6 py-8 sm:px-10 sm:py-10 rounded-2xl md:rounded-3xl border-2 border-opacity-20 border-section">
                 <h2 className="text-white text-24 sm:text-30 mb-6">
-                  Características distintivas
+                  {t("nosotros_caracteristicas_titulo")}
                 </h2>
                 {[
                   {
-                    title: "Flexibilidad",
-                    text: "Te acompañamos desde la etapa de prototipado hasta diseños de producción de gran volúmen.",
+                    title: t("nosotros_caracteristicas_flexibilidad_titulo"),
+                    text: t("nosotros_caracteristicas_flexibilidad_texto"),
                   },
                   {
-                    title: "Responsabilidad",
-                    text: "Nos encargamos de tu proyecto, para que puedas olvidarte de las preocupaciones y enfocarte en lo que realmente importa.",
+                    title: t("nosotros_caracteristicas_responsabilidad_titulo"),
+                    text: t("nosotros_caracteristicas_responsabilidad_texto"),
                   },
                   {
-                    title: "Comunicación",
-                    text: "Mantenemos canales de comunicación constantes para que estés al tanto de nuestro progreso en todo momento.",
+                    title: t("nosotros_caracteristicas_comunicacion_titulo"),
+                    text: t("nosotros_caracteristicas_comunicacion_texto"),
                   },
                   {
-                    title: "Robustez y escalabilidad",
-                    text: "Nuestro foco es desarrollar productos que puedan crecer en el largo plazo.",
+                    title: t("nosotros_caracteristicas_robustez_titulo"),
+                    text: t("nosotros_caracteristicas_robustez_texto"),
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 mt-6">

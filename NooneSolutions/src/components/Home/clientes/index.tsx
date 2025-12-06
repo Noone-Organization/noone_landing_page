@@ -6,8 +6,12 @@ import { motion } from "framer-motion";
 import { clientes } from "@/app/api/data";
 import Image from "next/image";
 import { getImagePrefix } from "@/utils/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Clientes = () => {
+
+  const { t } = useLanguage();
+
   const settings = {
     autoplay: true,
     dots: false,
@@ -50,10 +54,10 @@ const Clientes = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-muted sm:text-28 text-18 mb-9">
-              Clientes
+              {t("clientes")}
             </p>
             <h2 className="text-white sm:text-40 text-30 font-medium lg:w-80% mx-auto mb-20">
-              Ellos confiaron en nosotros.
+              {t("clientes_titulo")}
             </h2>
           </motion.div>
           <div className="lg:-mt-18 mt-18">
