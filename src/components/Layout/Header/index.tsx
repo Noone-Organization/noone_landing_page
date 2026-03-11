@@ -6,10 +6,12 @@ import Image from "next/image";
 import HeaderLink from "../Header/Navigation/HeaderLink";
 import MobileHeaderLink from "../Header/Navigation/MobileHeaderLink";
 import { useLanguage } from "@/context/LanguageContext";
+import { getImagePrefix } from "@/utils/utils";
 
 const Header: React.FC = () => {
   const { lang, setLang, t } = useLanguage();  
   const headerData = getHeaderData(t);        
+  const imagePrefix = getImagePrefix();
 
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
@@ -70,15 +72,15 @@ const Header: React.FC = () => {
             {/* FLAGS */}
             <div className="hidden lg:flex items-center gap-2">
               <button onClick={() => setLang("es")}>
-                <Image src="/images/flags/es.png" width={24} height={24} alt="ES" className={`${lang === "es" ? "opacity-100" : "opacity-40"}`} />
+                <Image src={`${imagePrefix}images/flags/es.png`} width={24} height={24} alt="ES" className={`${lang === "es" ? "opacity-100" : "opacity-40"}`} />
               </button>
 
               <button onClick={() => setLang("en")}>
-                <Image src="/images/flags/en.png" width={24} height={24} alt="EN" className={`${lang === "en" ? "opacity-100" : "opacity-40"}`} />
+                <Image src={`${imagePrefix}images/flags/en.png`} width={24} height={24} alt="EN" className={`${lang === "en" ? "opacity-100" : "opacity-40"}`} />
               </button>
 
               <button onClick={() => setLang("de")}>
-                <Image src="/images/flags/de.png" width={24} height={24} alt="DE" className={`${lang === "de" ? "opacity-100" : "opacity-40"}`} />
+                <Image src={`${imagePrefix}images/flags/de.png`} width={24} height={24} alt="DE" className={`${lang === "de" ? "opacity-100" : "opacity-40"}`} />
               </button>
             </div>
 
@@ -113,7 +115,8 @@ const Header: React.FC = () => {
 
             <button
               onClick={() => setNavbarOpen(false)}
-              className="bg-[url('/images/closed.svg')] bg-no-repeat bg-contain w-5 h-5 absolute top-0 right-0 mr-8 mt-8 dark:invert"
+              className="bg-no-repeat bg-contain w-5 h-5 absolute top-0 right-0 mr-8 mt-8 dark:invert"
+              style={{ backgroundImage: `url('${imagePrefix}images/closed.svg')` }}
               aria-label="Close menu Modal"
             ></button>
           </div>
@@ -121,13 +124,13 @@ const Header: React.FC = () => {
           {/* FLAGS MOBILE */}
           <div className="flex items-center gap-4 pl-4">
             <button onClick={() => setLang("es")}>
-              <Image src="/images/flags/es.png" width={28} height={28} alt="ES" className={`${lang === "es" ? "opacity-100" : "opacity-40"}`} />
+              <Image src={`${imagePrefix}images/flags/es.png`} width={28} height={28} alt="ES" className={`${lang === "es" ? "opacity-100" : "opacity-40"}`} />
             </button>
             <button onClick={() => setLang("en")}>
-              <Image src="/images/flags/en.png" width={28} height={28} alt="EN" className={`${lang === "en" ? "opacity-100" : "opacity-40"}`} />
+              <Image src={`${imagePrefix}images/flags/en.png`} width={28} height={28} alt="EN" className={`${lang === "en" ? "opacity-100" : "opacity-40"}`} />
             </button>
             <button onClick={() => setLang("de")}>
-              <Image src="/images/flags/de.png" width={28} height={28} alt="DE" className={`${lang === "de" ? "opacity-100" : "opacity-40"}`} />
+              <Image src={`${imagePrefix}images/flags/de.png`} width={28} height={28} alt="DE" className={`${lang === "de" ? "opacity-100" : "opacity-40"}`} />
             </button>
           </div>
 
