@@ -120,7 +120,7 @@ const Contacto = () => {
 
           <div className="col-span-12 lg:col-span-6 w-full h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.736703214584!2d-58.381590684771534!3d-34.60368478045992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca6a9ed1f1ef%3A0xf7f1b1f7f1b1f7f1!2sBuenos%20Aires!5e0!3m2!1ses!2sar!4v1692627880000!5m2!1ses!2sar"
+              src="https://maps.google.com/maps?q=Dresden&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
