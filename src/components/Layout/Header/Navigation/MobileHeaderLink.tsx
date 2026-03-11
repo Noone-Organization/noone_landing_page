@@ -1,19 +1,46 @@
 import { useState } from "react";
 import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
+import { scrollToSectionCentered } from "@/utils/scrollToSection";
 
-const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
+const MobileHeaderLink: React.FC<{ item: HeaderItem; onNavigate?: () => void }> = ({ item, onNavigate }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
 
   const handleToggle = () => {
     setSubmenuOpen(!submenuOpen);
   };
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (item.submenu) {
+      handleToggle();
+      return;
+    }
+
+    if (!item.href.startsWith("/#")) {
+      onNavigate?.();
+      return;
+    }
+
+    if (window.location.pathname !== "/") {
+      onNavigate?.();
+      return;
+    }
+
+    const sectionId = item.href.slice(2);
+    const didScroll = scrollToSectionCentered(sectionId);
+
+    if (didScroll) {
+      e.preventDefault();
+    }
+
+    onNavigate?.();
+  };
+
   return (
     <div className="relative w-full">
       <Link
         href={item.href}
-        onClick={item.submenu ? handleToggle : undefined}
+        onClick={handleClick}
         className="flex items-center justify-between w-full py-2 text-muted focus:outline-none"
       >
         {item.label}

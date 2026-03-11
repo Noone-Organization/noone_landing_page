@@ -11,24 +11,24 @@ const Proyectos = () => {
   const proyectosData = getProyectosData(t);
 
   return (
-    <section className="md:pt-48 sm:pt-28 pt-12 relative" id="proyectos">
-      <div className="container mx-auto lg:max-w-screen-xl px-4 sm:px-6 relative">
+    <section className="md:pt-48 sm:pt-28 pt-12 relative">
+      <div id="proyectos" className="container mx-auto lg:max-w-screen-xl px-4 sm:px-6 relative scroll-mt-24">
 
-        <div className="grid lg:grid-cols-2 items-center gap-20 relative z-10">
+        <div className="grid lg:grid-cols-[1.3fr_0.7fr] items-center gap-12 relative z-10">
 
           {/* Imagen */}
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
             initial={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:-ml-20"
+            className="lg:-ml-24"
           >
-            <div className="mx-auto w-full max-w-[600px]">
+            <div className="mx-auto w-full max-w-[800px]">
               <Image
                 src={`${getImagePrefix()}images/proyectos/img_portfolio.png`}
                 alt="Portfolio"
-                width={600}
-                height={500}
+                width={800}
+                height={740}
                 className="h-auto w-full"
                 priority
               />

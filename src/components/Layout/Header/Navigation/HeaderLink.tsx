@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
 import { usePathname } from "next/navigation";
+import { scrollToSectionCentered } from "@/utils/scrollToSection";
 
 const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
@@ -16,6 +17,23 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
     setSubmenuOpen(false);
   };
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!item.href.startsWith("/#")) {
+      return;
+    }
+
+    if (window.location.pathname !== "/") {
+      return;
+    }
+
+    const sectionId = item.href.slice(2);
+    const didScroll = scrollToSectionCentered(sectionId);
+
+    if (didScroll) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div
       className="relative"
@@ -24,6 +42,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
     >
       <Link
         href={item.href}
+        onClick={handleClick}
         className={`text-17 flex font-medium hover:text-primary capitalize ${
           path === item.href ? "text-primary " : " text-muted "
         }`}
