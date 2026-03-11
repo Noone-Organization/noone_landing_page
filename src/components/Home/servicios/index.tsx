@@ -21,7 +21,7 @@ const Servicios = () => {
             <p className="text-muted sm:text-28 text-18 mb-9">
               {t("servicios")}
             </p>
-            <h2 className="text-white sm:text-40 text-30 font-medium lg:w-80% mx-auto mb-20">
+            <h2 className="text-white sm:text-40 text-30 font-medium lg:w-80% mx-auto mb-2">
               {t("servicios_titulo")}
             </h2>
           </motion.div>

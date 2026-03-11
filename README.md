@@ -52,18 +52,18 @@ git push origin refactor_page
 
 ### 3) Publicar en GitHub Pages
 ```bash
-NEXT_PUBLIC_BASE_PATH=/noone_landing_page npm run deploy
+npm run deploy
 ```
 
 ### 4) Revisar el resultado
 Esperar 1 a 3 minutos y recargar con hard refresh (`Cmd + Shift + R`) en:
 
-https://noone-organization.github.io/noone_landing_page/
+https://noonesolutions.com
 
 ### Flujo corto para futuras publicaciones
 1. Hacer cambios.
 2. Ejecutar `npm run build`.
-3. Ejecutar `NEXT_PUBLIC_BASE_PATH=/noone_landing_page npm run deploy`.
+3. Ejecutar `npm run deploy`.
 
 ### Importante
 - En GitHub, la configuración de Pages debe apuntar a: `gh-pages` / `(root)`.
