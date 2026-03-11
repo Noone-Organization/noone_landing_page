@@ -1,10 +1,17 @@
 "use client"
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 import { useLanguage } from "@/context/LanguageContext";
+
+const SERVICE_ID = "service_sr7senq";
+const TEMPLATE_ID = "template_kwudm7z";
+const PUBLIC_KEY = "plbIeDZWyZCft5skF";
 
 const Contacto = () => {
 
   const { t } = useLanguage();
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     nombreCompleto: "",
@@ -12,14 +19,35 @@ const Contacto = () => {
     mensaje: "",
   });
 
-  const enviarMensaje = (e: React.FormEvent) => {
+  const enviarMensaje = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Integrate API/email submission handler.
-    setFormData({ nombreCompleto: "", email: "", mensaje: "" });
+    setLoading(true);
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          nombreCompleto: formData.nombreCompleto,
+          name: formData.nombreCompleto,
+          email: formData.email,
+          message: formData.mensaje,
+          time: new Date().toLocaleString(),
+        },
+        PUBLIC_KEY
+      );
+      toast.success("message sent");
+      setFormData({ nombreCompleto: "", email: "", mensaje: "" });
+    } catch {
+      toast.error(t("contacto_error") || "Error al enviar el mensaje. Intenta de nuevo.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section className="pt-12 sm:pt-24 md:pt-44 relative z-1" id="contacto">
+    <>
+      <Toaster position="top-right" />
+      <section className="pt-12 sm:pt-24 md:pt-44 relative z-1" id="contacto">
       <div className="container mx-auto lg:max-w-screen-xl px-4">
         <div className="bg-gradient-to-br from-primary from-50% to-charcoalGray to-40% w-96 h-96 sm:w-[500px] sm:h-[500px] rounded-full sm:-bottom-80 bottom-0 blur-400 absolute sm:-left-48 opacity-60 z-0"></div>
 
@@ -82,9 +110,10 @@ const Contacto = () => {
 
               <button
                 type="submit"
-                className="bg-primary w-full py-3 rounded-lg text-18 font-medium border border-primary hover:text-primary hover:bg-transparent transition"
+                disabled={loading}
+                className="bg-primary w-full py-3 rounded-lg text-18 font-medium border border-primary hover:text-primary hover:bg-transparent transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {t("contacto_boton")}
+                {loading ? "..." : t("contacto_boton")}
               </button>
             </form>
           </div>
@@ -104,6 +133,7 @@ const Contacto = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
