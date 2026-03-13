@@ -43,6 +43,14 @@ export const clientes: {
     padding: "px-0 py-0",
     website: "https://www.sydney.edu.au/",
   },
+  {
+    title: "TU Dresden",
+    icon: "images/clientes/logo-tu-dresden.png",
+    width: 260,
+    height: 80,
+    padding: "px-0 py-0",
+    website: "https://tu-dresden.de/",
+  },
 ];
 
 export const getProyectosData = (t: (key: string) => string) => [

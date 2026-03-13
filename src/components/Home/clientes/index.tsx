@@ -64,26 +64,28 @@ const Clientes = () => {
             <Slider {...settings}>
               {clientes.map((item, index) => (
                 <div key={index} className="pr-6">
-                  <div className="px-5 py-6 bg-dark_grey bg-opacity-80 rounded-xl">
+                  <div className="px-5 py-6 bg-dark_grey bg-opacity-80 rounded-xl overflow-hidden">
                     <div className="flex items-center justify-center">
                       {item.website ? (
-                        <a href={item.website} target="_blank" rel="noopener noreferrer">
-                          <div className={`${item.padding}`}>
+                        <a href={item.website} target="_blank" rel="noopener noreferrer" className="block w-full">
+                          <div className={`flex h-20 w-full items-center justify-center ${item.padding}`}>
                             <Image
                               src={`${getImagePrefix()}${item.icon}`}
                               alt={item.title}
                               width={item.width}
                               height={item.height}
+                              className="h-auto max-h-[80px] w-auto max-w-full object-contain"
                             />
                           </div>
                         </a>
                       ) : (
-                        <div className={`${item.padding}`}>
+                        <div className={`flex h-20 w-full items-center justify-center ${item.padding}`}>
                           <Image
                             src={`${getImagePrefix()}${item.icon}`}
                             alt={item.title}
                             width={item.width}
                             height={item.height}
+                            className="h-auto max-h-[80px] w-auto max-w-full object-contain"
                           />
                         </div>
                       )}

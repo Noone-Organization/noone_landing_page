@@ -8,9 +8,13 @@ export const scrollToSectionCentered = (id: string): boolean => {
     return false;
   }
 
-  const elementRect = element.getBoundingClientRect();
-  const elementCenterY = window.scrollY + elementRect.top + elementRect.height / 2;
-  const targetScrollY = Math.max(0, elementCenterY - window.innerHeight / 2);
+  const elementTop = window.scrollY + element.getBoundingClientRect().top;
+  const header = document.querySelector("header");
+  const headerHeight = header?.getBoundingClientRect().height ?? 0;
+
+  // Keep a small breathing room under the fixed header, larger on mobile.
+  const extraOffset = window.innerWidth < 1024 ? 16 : 24;
+  const targetScrollY = Math.max(0, elementTop - headerHeight - extraOffset);
 
   window.scrollTo({
     top: targetScrollY,
