@@ -1,0 +1,11 @@
+services:
+  noone-landing:
+    build: .
+    container_name: noone-landing
+    restart: unless-stopped
+    networks:
+      - landing_net
+
+networks:
+  landing_net:
+    external: true
